@@ -99,17 +99,27 @@ void renderWheel(){
     printNums();
 }
 
+struct Nums {
+    int number;
+    char color[50];
+    int category;  
+};
 
-void createCombinations(struct Combinations *combo) {
+struct Nums createNums(int num, char color[50], int category) {
+    struct Nums a;
+    a.number = num;
+    strcpy(a.color, color); 
+    a.category = category;
+    return a;
+}
+
+void createCombinations(struct Nums *combinations){
     for (int i = 1; i <= 36; i++) {
-        if (i % 2 != 0) {
-            struct Nums a = {i, "red", 1};
-            combo.combinations[i - 1] = a;
+        if (i % 2 == 0) {
+            combinations[i - 1] = createNums(i, "RED", 1);
         } else {
-            struct Nums a = {i, "black", 2};
-            combo.combinations[i - 1] = a;
+            combinations[i - 1] = createNums(i, "BLACK", 2);
         }
     }
-
-    return combo;
 }
+
