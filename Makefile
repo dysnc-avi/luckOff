@@ -14,8 +14,8 @@ OBJS = $(BUILD_DIR)/main.o $(BUILD_DIR)/nums.o
 # Header files
 INCLUDES = -I$(SRC_DIR)
 
-# Output executable
-TARGET = $(BIN_DIR)/roulette
+# Output executable (Windows EXE)
+TARGET = $(BIN_DIR)/roulette.exe
 
 # Rules
 all: $(TARGET)
